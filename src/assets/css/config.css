@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'SimplonHeadline';
+    src:
+      url(/assets/fonts/simplon/simplonoi-headline-webfont.eot);
+    src:
+      url(/assets/fonts/simplon/simplonoi-headline-webfont.eot?#iefix) format('embedded-opentype'),
+      url(/assets/fonts/simplon/simplonoi-headline-webfont.woff) format('woff'),
+      url(/assets/fonts/simplon/simplonoi-headline-webfont.ttf) format('truetype'),
+      url(/assets/fonts/simplon/simplonoi-headline-webfont.svg) format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Simplon';
+  src:
+    url(/assets/fonts/simplon/simplonbp-light-webfont.eot);
+  src:
+    url(/assets/fonts/simplon/simplonbp-light-webfont.eot?#iefix) format('embedded-opentype'),
+    url(/assets/fonts/simplon/simplonbp-light-webfont.woff) format('woff'),
+    url(/assets/fonts/simplon/simplonbp-light-webfont.ttf) format('truetype'),
+    url(/assets/fonts/simplon/simplonbp-light-webfont.svg) format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Simplon';
+  src:
+    url(/assets/fonts/simplon/simplonbp-regular-webfont.eot);
+  src:
+    url(/assets/fonts/simplon/simplonbp-regular-webfont.eot?#iefix) format('embedded-opentype'),
+    url(/assets/fonts/simplon/simplonbp-regular-webfont.woff) format('woff'),
+    url(/assets/fonts/simplon/simplonbp-regular-webfont.ttf) format('truetype'),
+    url(/assets/fonts/simplon/simplonbp-regular-webfont.svg) format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Simplon';
+  src:
+    url(/assets/fonts/simplon/simplonbp-bold-webfont.eot);
+  src:
+    url(/assets/fonts/simplon/simplonbp-bold-webfont.eot?#iefix) format('embedded-opentype'),
+    url(/assets/fonts/simplon/simplonbp-bold-webfont.woff) format('woff'),
+    url(/assets/fonts/simplon/simplonbp-bold-webfont.ttf) format('truetype'),
+    url(/assets/fonts/simplon/simplonbp-bold-webfont.svg) format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Simplon';
+  src:
+    url(/assets/fonts/simplon/simplonbp-medium-webfont.eot);
+  src:
+    url(/assets/fonts/simplon/simplonbp-medium-webfont.eot?#iefix) format('embedded-opentype'),
+    url(/assets/fonts/simplon/simplonbp-medium-webfont.woff) format('woff'),
+    url(/assets/fonts/simplon/simplonbp-medium-webfont.ttf) format('truetype'),
+    url(/assets/fonts/simplon/simplonbp-medium-webfont.svg) format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
