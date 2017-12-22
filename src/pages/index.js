@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import { ThemeProvider } from 'styled-components'
 import theme from '../themes/Default'
 
+
 import {
   AtCol ,
   AtRow,
@@ -192,14 +193,15 @@ class SVA extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Div>
+          test
           <AtCol>
-                <OrHeaderMenu />
+
         				<MoHero
         							img = {JSONTarget.get('JSONBanner').get('AtSecImg')}
         							titulo = "UM MUNDO DE SERVIÇOS OI PRA VOCÊ"
         							texto = "Saúde, educação, proteção digital e muito mais. Tenha os melhores serviços da Oi ao alcance do seu computador, tablet ou celular."
         					/>
-        				<Tabs>
+        			<Tabs>
         					<Tab
         						content={items(JSONTarget)}
         						title={JSONTarget.get('TabTitle1')}
@@ -212,8 +214,8 @@ class SVA extends React.Component {
         						      {itemsVertical2(JSONTarget)}
         					</Tab>
         				</Tabs>
-        				<OrBanner JSONBanner={JSONTarget.get('JSONBanner').toJS()}/>
-            		<OrFooter JSONFooter={JSONTarget.get('JSONFooter').toJS()}/>
+        				{/*<OrBanner JSONBanner={JSONTarget.get('JSONBanner').toJS()}/>
+            		<OrFooter JSONFooter={JSONTarget.get('JSONFooter').toJS()}/>*/}
           </AtCol>
         </Div>
       </ThemeProvider>

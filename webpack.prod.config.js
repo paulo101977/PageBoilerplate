@@ -5,20 +5,25 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+                                            .BundleAnalyzerPlugin;
 
 const ss = require('./src/ss_routes');
 
 const prodConf = require('./config/prod');
 
-const EXTERNALS = require('./config/common').EXTERNALS;
+const { EXTERNALS, IMG_PLUGIN } = require('./config/common');
+//const WebpackShellPlugin = require('webpack-shell-plugin');
 
 module.exports = {
     entry: {
-      bundle: './src/pages/index.js'
+      index: './src/pages/index.js',
+      'reducers/index': './src/reducers/index.js',
+      'actions/index': './src/actions/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.js',
+        filename: '[name].js',
         libraryTarget: 'umd',
         library: "PageBoilerplate"
     },
@@ -26,6 +31,7 @@ module.exports = {
     externals: EXTERNALS,
     devtool: "cheap-module-source-map",
     module: prodConf,
+    /* alias */
     resolve:{
       alias:{
         '@ComponentsOi':
@@ -41,16 +47,8 @@ module.exports = {
             from:'./src/assets/images/**/*.png',
             to: './assets/images/[name].[ext]'
         }]),
-        /* copy actions */
-        new CopyWebpackPlugin([{
-            from:'./src/actions/**/*',
-            to: './actions/[name].[ext]'
-        }]),
-        /* copy reducers */
-        new CopyWebpackPlugin([{
-            from:'./src/reducers/**/*',
-            to: './reducers/[name].[ext]'
-        }]),
+        //this plugin work with CopyWebpackPlugin
+        IMG_PLUGIN(),
         /* production config */
         new webpack.DefinePlugin({
             'process.env': {
@@ -90,6 +88,7 @@ module.exports = {
             /moment$/
         ),
         new webpack.NamedModulesPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new BundleAnalyzerPlugin(),
     ]
 };

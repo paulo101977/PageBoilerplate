@@ -1,3 +1,5 @@
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+
 module.exports = {
   ROOT_PATH : "./",
   EXTERNALS: {
@@ -39,5 +41,53 @@ module.exports = {
     "react-router-dom": "react-router-dom",
     "jquery": "jquery",
     "jQuery": "jQuery",
+    "react-dom": "react-dom",
+    "react-code-splitting": "react-code-splitting",
+  },
+  EXTERNALS_DEV: {
+    "storybook-addon-specifications": "storybook-addon-specifications",
+    "@storybook/addon-actions": "@storybook/addon-actions",
+    "@storybook/addon-info": "@storybook/addon-info",
+    "@storybook/addon-links": "@storybook/addon-links",
+    "@storybook/react": "@storybook/react",
+    "browser-sync": "browser-sync",
+    "browser-sync-webpack-plugin": "browser-sync-webpack-plugin",
+    "pkgfiles": "pkgfiles",
+    "react-addons-test-utils": "react-addons-test-utils",
+    "react-helmet": "react-helmet",
+    "react-test-renderer": "react-test-renderer",
+    "autoprefixer": "autoprefixer",
+    "babel-cli": "babel-cli",
+    "babel-core": "babel-core",
+    "babel-loader": "babel-loader",
+    "babel-preset-es2015": "babel-preset-es2015",
+    "babel-preset-react": "babel-preset-react",
+    "clean-webpack-plugin": "clean-webpack-plugin",
+    "copy-webpack-plugin": "copy-webpack-plugin",
+    "css-loader": "css-loader",
+    "dotenv-webpack": "dotenv-webpack",
+    "enzyme": "enzyme",
+    "expect": "expect",
+    "extract-text-webpack-plugin": "extract-text-webpack-plugin",
+    "file-loader": "file-loader",
+    "humps": "humps",
+    "postcss-loader": "postcss-loader",
+    "style-loader": "style-loader",
+    "webpack": "webpack",
+    "static-site-generator-webpack-plugin": "static-site-generator-webpack-plugin",
+    "webpack-dev-server": "webpack-dev-server",
+    "storybook-addon-specifications": "storybook-addon-specifications",
+    "jquery": "jquery",
+    "jQuery": "jQuery",
+  },
+  //this plugin work with CopyWebpackPlugin
+  IMG_PLUGIN: function(){
+    return new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i ,
+      optipng: {
+        optimizationLevel: 9
+      }
+    })
   }
+
 }

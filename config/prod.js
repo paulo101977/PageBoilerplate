@@ -10,11 +10,14 @@ const otherFiles = ROOT_PATH + 'assets/[name].[ext]';
 const rules = { rules: [
     {
         test: /\.js/,
-        use: 'babel-loader'
+        use: 'babel-loader',
+        include: pathName,
+        exclude: /node_modules/
     },
     {
-        test: /\.(jpg|png|svg)/,
+        test: /\.(jpg|png|svg|ico)/,
         include: pathName,
+        exclude: /node_modules/,
         use: {
             loader: 'file-loader',
             options: { name: imageName }
@@ -23,17 +26,10 @@ const rules = { rules: [
     {
         test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         include: pathName,
+        exclude: /node_modules/,
         use: {
             loader: 'file-loader',
             options: { name: fontName }
-        }
-    },
-    {
-        test: /\.(ico|otf|pdf)/,
-        include: pathName,
-        use: {
-            loader: 'file-loader',
-            options: { name: otherFiles }
         }
     }
 ] }

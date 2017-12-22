@@ -1,6 +1,5 @@
 import superAgent from 'superagent'
 import Promise from 'bluebird'
-import _ from 'lodash'
 import config from './../config'
 import { camelizeKeys } from 'humps'
 
@@ -68,7 +67,7 @@ function createRequestPromise (apiActionCreator, next, getState, dispatch) {
             }))
           }
 
-          if (_.isFunction(params.afterError)) {
+          if (typeof params.afterError === 'function') {
             params.afterError({ getState })
           }
           deferred.reject()
@@ -80,7 +79,7 @@ function createRequestPromise (apiActionCreator, next, getState, dispatch) {
             status: resBody.status
           }))
 
-          if (_.isFunction(params.afterSuccess)) {
+          if (typeof params.afterError === 'function') {
             params.afterSuccess({ getState })
           }
           deferred.resolve(resBody)
@@ -106,12 +105,12 @@ function extractParams (callApi) {
     afterError
   } = callApi
   let url = ''
-  
+
   if ( type === 'internal' ){
     url = `${config.API_BASE_URL_INTERNAL}${path}`
   }else{
     url = `${config.API_BASE_URL_EXTERNAL}${path}`
-  } 
+  }
 
   return {
     method,

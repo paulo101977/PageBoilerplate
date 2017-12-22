@@ -1,3 +1,12 @@
 {
-  "presets": ["react", "es2015"]
+  "presets": ["env","react"],
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-react-jsx"
+  ],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  }
 }

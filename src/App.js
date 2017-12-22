@@ -1,10 +1,12 @@
-import React from 'react'
-import * as Actions from './actions'
+import React from 'react';
+import * as Actions from './actions';
 import SVA from './pages'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import currentMock from './reducers/mock_original'
-import modifiedJson from './reducers/mock_modified'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import currentMock from './reducers/mock_original';
+import modifiedJson from './reducers/mock_modified';
+
+const SVAAsync = (props) => <Async load={import('./pages')} componentProps={props}/>
 
 class App extends React.Component {
   componentWillMount() {
