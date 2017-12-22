@@ -1,6 +1,6 @@
 {
   "name": "PageBoilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An example static page using ComponentsOi",
   "main": "./dist/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "author": "Oi DEV`Z GOLD TEAM",
   "license": "MIT",
   "dependencies": {
-    "ComponentsOi": "git+https://github.com/OiSA/ComponentsOi.git#6ba030de995d25d1f08400122a0b9cfbc3971662",
+    "ComponentsOi": "git+https://github.com/OiSA/ComponentsOi.git",
     "react-async-component": "^1.0.2",
     "react-code-splitting": "^1.2.1",
     "styled-components": "^2.1.2",

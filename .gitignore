@@ -11,3 +11,5 @@ div/
 dev/
 exp/
 PageBoilerplate-*
+assets/
+package-lock.json

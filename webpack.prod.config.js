@@ -35,7 +35,7 @@ module.exports = {
     resolve:{
       alias:{
         '@ComponentsOi':
-            path.resolve(__dirname, './node_modules/ComponentsOi/dist/index.js'),
+            path.resolve(__dirname, './node_modules/ComponentsOi/src/index.js'),
         '@ComponentsOiLib':
             path.resolve(__dirname, './node_modules/ComponentsOi/dist/lib/')
       }
